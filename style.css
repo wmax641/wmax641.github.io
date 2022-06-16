@@ -43,8 +43,8 @@ p {
 }
 #displaypic:hover {
     box-shadow: 0px 0px 15px rgba(192, 128, 128, 0.8);
-    transform: rotate(5deg);
-    -webkit-transform: rotate(5deg);
+    transform: rotate(6deg);
+    -webkit-transform: rotate(6deg);
 }
 
 #main {
@@ -109,7 +109,7 @@ p {
         height: 100vh;
         width: calc(100px + 5vw + 2vw);
         max-width: 250px;
-        background-image: linear-gradient(to right, rgba(20,20,20,0.7), rgba(20,20,20,0));
+        background-image: linear-gradient(to right, rgba(30,30,30,0.7), rgba(30,30,30,0));
     }
     #right {
         position:absolute;
@@ -162,11 +162,11 @@ p {
     padding-left: 1vw;
     color: #fdd;
     border: none;
-    transition: border-left 0.5s, padding-left 0.5s, color 0.5s;
+    transition: border-left 0.3s, padding-left 0.3s, color 0.3s;
 }
 .contentlink:hover {
     border-left: calc(6px + 0.1vw) solid #a30;
-    padding-left: 1.5vw;
+    padding-left: 1.0vw;
     color: #daa;
 
 }
@@ -181,18 +181,4 @@ p {
     font-size: calc(12px + 0.2vw);
     border-left: 6px solid #b77;
     padding: 15px 5px 15px 15px;
-}
-quotesnippet {
-    background-color: rgba(40, 25, 25, 0.5);
-    font-size: calc(12px + 0.2vw);
-    border-left: 5px solid #b77;
-    padding: 15px 15px 15px 15px;
-    width: 100%;
-    display: inline-block;
-}
-quotefooter {
-    text-align: right;
-    font-style: italic;
-    display: block;
-    margin-right: 50px;
 }
