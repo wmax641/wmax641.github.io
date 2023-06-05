@@ -10,13 +10,36 @@ html {
 }
 a {
     text-decoration: none;
+    color: #b77;
+}
+a:hover {
+    color: #a55;
+}
+span#shake {
     border-bottom: 1px dashed #b77;
     color: #b77;
     outline: 0;
+    min-height: 1.25em;
+    display: inline-block;
 }
-a:hover {
+span#shake:hover {
     color: #d55;
     border-bottom: 1px dashed #c55;
+    animation: shake 1.0s;
+    animation-iteration-count: infinite;
+}
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -1px) rotate(-1deg); }
+  20% { transform: translate(-1px, 0px) rotate(1deg); }
+  30% { transform: translate(1px, 1px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 1px) rotate(-1deg); }
+  60% { transform: translate(-1px, 1px) rotate(0deg); }
+  70% { transform: translate(1px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 1px) rotate(0deg); }
+  100% { transform: translate(1px, -1px) rotate(-1deg); }
 }
 h2 {
     margin-bottom: 0.9em;
@@ -34,8 +57,6 @@ p {
     margin-bottom: 5vh;
     box-shadow: 0px 0px 10px rgba(128, 96, 96, 0.7);
     transition: all 0.4s;
-    transform: rotate(-2deg);
-    -webkit-transform: rotate(-2deg);
     background: center no-repeat url("static/dp/hachama0.png"); 
     background-size: calc(100px + 7vw);
     width: 100%;
@@ -43,15 +64,15 @@ p {
 }
 #displaypic:hover {
     box-shadow: 0px 0px 15px rgba(192, 128, 128, 0.8);
-    transform: rotate(6deg);
-    -webkit-transform: rotate(6deg);
+    animation: shake 1.0s;
+    animation-iteration-count: infinite;
 }
 
 #main {
     z-index: 20;
 }
 .page {
-    margin-bottom: calc(30px + 2vh);
+    margin-bottom: calc(10px + 2vh);
 }
 @media only screen and (max-width: 750px) {
     body {
@@ -89,7 +110,7 @@ p {
     }
     .page {
         margin-bottom: 8vh;
-        min-height: 200px;
+        min-height: 300px;
         border-radius: 20px;
     }
 }
@@ -127,7 +148,7 @@ p {
     .page {
         padding: 30px 0px 30px;
         border-radius: 30px;
-        min-height: 200px;
+        min-height: 300px;
     }
 }
 
@@ -160,15 +181,16 @@ p {
     height: 40px;;
     min-height: 35px;
     padding-left: 1vw;
+    margin-bottom: 0.5em;
     color: #fdd;
     border: none;
-    transition: border-left 0.3s, padding-left 0.3s, color 0.3s;
+    transition: background 0.3s, color 0.3s, padding-left 0.3s;
 }
 .contentlink:hover {
-    border-left: calc(6px + 0.1vw) solid #a30;
-    padding-left: 1.0vw;
-    color: #daa;
-
+    padding-left: 0.75em;
+    color: #c88;
+    animation: shake 1.0s;
+    animation-iteration-count: infinite;
 }
 .contentlink a {
     text-decoration: none;

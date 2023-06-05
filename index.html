@@ -61,41 +61,6 @@ xvKUSQ5gVRpTT6UTPqNTykdaPtqlGLNvB6LtgUpkkCPYm5qnXW+063Lq9vpTr+667mNWMyYOt2Sr
 N9YIztkOiERwtUz+U5ewkWS4BxIGa9sT6uWahgzOiF0HHJlee2sfcH1qAF9xlu4g3FrrHfoKjZka
 Dal+fZ8aeK93ateWGtbHHkTVBOs0RjhOaIIq1GRVSgLEoo2Z3jIMtXFN885v5mMP7/Xu4idIj42W
 GUKtB9EKglIFiHIipYRgfm4DCJ2g+D630RPxrnXX+bnN/wBQU1xslb/JNAAAAABJRU5ErkJggg=="/>
-        <script>var PARRALAX_EXTENSION = 12;
-
-            var bg_min_threshold = 0.15; /*background effect starts below this percentage*/
-            var bg_max_threshold = 0.35; /*background effect maximum here*/
-            var bg_scaler = (1 / (bg_max_threshold - bg_min_threshold)).toFixed(2);
-
-            function main() {
-                setParralax();
-                window.addEventListener('scroll', function(e) {
-                    setParralax();
-                });
-            }
-
-            function setParralax() {
-                var bg = document.getElementById("background");
-                var bgoverlay = document.getElementById("backgroundOverlay");
-                var h = document.documentElement, 
-                    b = document.body,
-                    st = "scrollTop",
-                    sh = "scrollHeight";
-                var scrollPercent = (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight);
-                var top_offset = (0 - scrollPercent * PARRALAX_EXTENSION).toFixed(3);
-                var bgopacity = 0;
-                if (scrollPercent < bg_min_threshold) {
-                    bgopacity = 0.25; 
-                } else if (scrollPercent < bg_max_threshold) {
-                    bgopacity = 0.25 + 0.55 * bg_scaler * (scrollPercent-bg_min_threshold); 
-                } else {
-                    bgopacity = 0.8;
-                }
-                bgoverlay.style.opacity = bgopacity;
-                bg.style.top =  top_offset + "vh";
-            }
-
-            window.onload = main;</script>
     </head>
     
     <body>
@@ -103,10 +68,10 @@ GUKtB9EKglIFiHIipYRgfm4DCJ2g+D630RPxrnXX+bnN/wBQU1xslb/JNAAAAABJRU5ErkJggg=="/>
         <div id="backgroundOverlay"> </div>
         <div id="left">
         <a id="displaypic" href="#"></a>
-            <a href="#about"><p class="contentlink">About</p></a>
-            <a href="#links"><p class="contentlink">Links</p></a>
-            <a href="#keys"><p class="contentlink">Keys</p></a>
-            <a href="#contact"><p class="contentlink">Contact</p></a>
+            <a href="#about"><div class="contentlink">About</div></a>
+            <a href="#links"><div class="contentlink">Links</div></a>
+            <a href="#keys"><div class="contentlink">Keys</div></a>
+            <a href="#contact"><div class="contentlink">Contact</div></a>
         </div>
         <div id="right">
             <div id="main"> 
@@ -116,10 +81,10 @@ GUKtB9EKglIFiHIipYRgfm4DCJ2g+D630RPxrnXX+bnN/wBQU1xslb/JNAAAAABJRU5ErkJggg=="/>
                 </div>
                 <div id="links" class="page">
                     <h2>Links</h2>
-                    <p><a href="https://github.com/wmax641">Github</a> - work in progress</p>
-                    <p><a href="https://wmax641.website/personal-docs/">Personal Docs and Notes</a> - actual documentation??!</p>
-                    <p><a href="https://clueless.engineer">clueless.engineer</a> - me in a nutshell</p>
-                    <p><a href="/fingerprint/fingerprint.html">Browser Fingerprinter</a> - Calculates unique fingerprint of browser</p>
+                    <p><span id="shake"><a href="https://github.com/wmax641">Github</a></span> - gallery of abandoned projects</p>
+                    <p><span id="shake"><a href="https://wmax641.website/personal-docs/">Personal Docs and Notes</a></span> - actual documentation??!</p>
+                    <p><span id="shake"><a href="https://clueless.engineer">clueless.engineer</a></span> - me in a nutshell</p>
+                    <p><span id="shake"><a href="/fingerprint/fingerprint.html">Browser Fingerprinter</a></span> - Calculates unique fingerprint of browser</p>
                 </div>
                 <div id="keys" class="page">
                     <h2>Keys</h2>
@@ -152,4 +117,54 @@ t1BAAw==
             </div>
         </div>
     </body>
+    <script>
+        //var PARRALAX_EXTENSION 12;
+
+        var bg_min_threshold = 0.20; /*background effect starts after this scroll percentage */
+        var bg_max_threshold = 0.40; /*background effect maximum reached at this percentage */
+        var min_overlay_opacity = 0.25;
+        var max_overlay_opacity = 0.80;
+        var bg_scaler = (1 / (bg_max_threshold - bg_min_threshold)).toFixed(2);
+        var max_blur = 5; /* maximum blur in px */
+
+        function main() {
+            setParralax();
+            window.addEventListener('scroll', function(e) {
+                setParralax();
+            });
+        }
+
+        function getScrollPercent() {
+        var h = document.documentElement,
+            b = document.body,
+            st = 'scrollTop',
+            sh = 'scrollHeight';
+            return (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight);
+        }
+
+        function setParralax() {
+            var bgoverlay = document.getElementById("backgroundOverlay");
+            var bg = document.getElementById("background");
+            var scrollPercent = getScrollPercent();
+
+            var bg_overlay_opacity, bg_blur;
+
+            if (scrollPercent < bg_min_threshold) {
+                bg_overlay_opacity = min_overlay_opacity
+                bg_blur = 0;
+            } else if (scrollPercent < bg_max_threshold) {
+                // bg overlay is the minimum opacity, plus a scalar of the difference between
+                // min and max overlays
+                bg_overlay_opacity = min_overlay_opacity + (max_overlay_opacity-min_overlay_opacity) * bg_scaler * (scrollPercent - bg_min_threshold); 
+                bg_blur = max_blur * bg_scaler * (scrollPercent - bg_min_threshold);
+            } else {
+                bg_overlay_opacity = max_overlay_opacity;
+                bg_blur = max_blur;
+            }
+            bgoverlay.style.opacity = bg_overlay_opacity;
+            bg.style.filter = 'blur('+ (bg_blur) + 'px)';
+        }
+
+        window.onload = main;
+    </script>
 </html>
