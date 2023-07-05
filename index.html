@@ -81,10 +81,11 @@ GUKtB9EKglIFiHIipYRgfm4DCJ2g+D630RPxrnXX+bnN/wBQU1xslb/JNAAAAABJRU5ErkJggg=="/>
                 </div>
                 <div id="links" class="page">
                     <h2>Links</h2>
-                    <p><span id="shake"><a href="https://github.com/wmax641">Github</a></span> - gallery of abandoned projects</p>
+                    <p><span id="shake"><a href="https://github.com/wmax641">Github</a></span> - repository of abandoned projects</p>
                     <p><span id="shake"><a href="https://wmax641.website/personal-docs/">Personal Docs and Notes</a></span> - actual documentation??!</p>
                     <p><span id="shake"><a href="https://clueless.engineer">clueless.engineer</a></span> - me in a nutshell</p>
-                    <p><span id="shake"><a href="/fingerprint/fingerprint.html">Browser Fingerprinter</a></span> - Calculates unique fingerprint of browser</p>
+                    <p><span id="shake"><a href="/fingerprint/fingerprint.html">Browser Fingerprinter</a></span> - a browser fingerprinter</p>
+                    <p><span id="shake"><a href="/o365/login.html?training=0&urk=aHR0cHM6Ly93bWF4NjQxLndlYnNpdGU=">O365 <s>phishing</s> mock page</a></span> - PoC phishing page using a single .HTML document</p>
                 </div>
                 <div id="keys" class="page">
                     <h2>Keys</h2>
@@ -149,6 +150,11 @@ t1BAAw==
 
             var bg_overlay_opacity, bg_blur;
 
+            /* parralax scrolling background */
+            max_bh_offset = window.innerHeight * -0.1;
+            bg.style.top = (scrollPercent * max_bh_offset) + "px";
+
+            /* bluring effect on scroll */
             if (scrollPercent < bg_min_threshold) {
                 bg_overlay_opacity = min_overlay_opacity
                 bg_blur = 0;
