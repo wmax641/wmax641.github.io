@@ -15,7 +15,7 @@
                         username@domain.com
                     </div>
                     <div class="prompt">
-                        Enter password
+                        (don't) Enter password
                     </div>
                     <div id="error">
                         Please enter the password for your Microsoft account.
@@ -32,7 +32,7 @@
     </div>
 </body>
 <head>
-<title>Sign in to your account</title>
+<title>[SAMPLE] Sign in to your account</title>
 <script>
     var url_string = document.location.search;
     var url = new URL("http://reddit.com/" + url_string);
@@ -41,7 +41,7 @@
     var input_btn = document.getElementById("password");
 
     /* Try to see if username is specified */
-    var username = "username@domain.com";
+    var username = "for_sample_only@example.com";
     var getId = url.searchParams.get("id");
     var usernameElement = document.getElementById("display_name");
     if (getId) {
