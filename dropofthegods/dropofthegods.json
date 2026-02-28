@@ -1,0 +1,43 @@
+[
+  {
+    "name": "Deconstructed Banana Colada",
+    "style": "Sour",
+    "base": "Rum",
+    "category": "Drop of the Gods",
+    "img": "images/banana_colada.jpg",
+    "ingredients": [
+      { "amount": 60,   "unit": "mL", "ingredient": "Fig Leaf infused Rum with Banana Oleo" },
+      { "amount": 20,   "unit": "mL", "ingredient": "Banana Cordial" },
+      "Coconut Cloud Float"
+    ],
+    "method": [
+      "<b>Fig Leaf Infused Rum</b><br>300mL Light Rum, 4 fig leaves, pinch of citric Acid<br>Room Temperature Infuse for 18-24 hours",
+      "<b>Banana Oleo</b><br>3 banana skins, 50g sugar, pinch of citric acid<br>Room temperature macerate for 18-24 hours",
+      "Combine Fig Leaf Infused Rum, Banana Oleo, Cinnamon, Nutmeg, Room Temperature Infuse for 1 hour<br>Filter with Coffee Filter",
+      "<b>Banana Juice Cordial</b><br>3 Bananas, Pinch of Citric Acid<br>Blend and clarify with Pectinex<br>Citric Acid @3% by weight",
+      "<b>Coconut Cloud Float</b><br>2:1 Coconut Milk : Thick Cream<br>Pinch of Salt<br>Vanilla Extract"
+    ],
+    "notes": "Concept originally from 'MOKU', Sydney - 'Ba-la-la' cocktail"
+  },
+
+  {
+    "name": "Silk Jasmine",
+    "style": "Sour",
+    "base": "Rum",
+    "category": "Drop of the Gods",
+    "ingredients": [
+      { "amount": 45,   "unit": "mL", "ingredient": "Pineapple Rum" },
+      { "amount": 30,   "unit": "mL", "ingredient": "Passionfruit Cordial" },
+      "4g chinese 5-spice powder / 1000mL cocktail mix",
+      "Jasmine Milk Tea milk wash"
+    ],
+    "method": [
+      "<b>Pineapple Rum</b><br>300mL Dark Rum (ideally Planteray Pineapple Rum)<br>Sous Vide @55°C for 2 hours",
+      "<b>Passionfruit Cordial</b><br>175g Passionfruit Juice without seeds<br>52.5g Sugar (~30% by weight)<br>5g citric acid (~2.5% by weight)",
+      "<b>Jasmine Milk Tea</b><br>4g Jasmine Tea with 200mL Milk (20g team/ 1000mL milk)<br>Bring to boil, then turn off heat and soak for 5min",
+      "<b>Milk Wash</b></br>Infuse chinese 5 spice powder for > 12 hours<br>3:1 cocktail to milk Milk Wash"
+    ],
+    "notes": "Concept originally from 'Kahii', Sydney - 'Silk Jasmine' cocktail"
+  }
+
+]
