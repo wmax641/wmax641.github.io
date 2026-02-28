@@ -1,5 +1,21 @@
 [
   {
+    "name": "Coffee Negroni",
+    "style": "Old-Fashioned",
+    "base": "Gin",
+    "category": "Drop of the Gods",
+    "ingredients": [
+      { "amount": 30,   "unit": "mL", "ingredient": "Coffee infused Gin" },
+      { "amount": 22.5, "unit": "mL", "ingredient": "Citrus infused Aperitivo" },
+      { "amount": 30,   "unit": "mL", "ingredient": "Antica Formula sweet vermouth" }
+    ],
+    "method": [
+      "<b>Coffee infused Gin</b><br>300mL Old Tom Gin, 13g Coffee Beans<br>Cold infuse 24 hours",
+      "<b>Citrus infused Aperitivo</b><br>150mL Campari, 100mL Amaro Montenegro<br>Citrus peel at 10% weight of aperitivo mix. Blanch twice to reduce bitterness<br>Sous Vide @55°C for 1 hour"
+    ]
+  },
+
+  {
     "name": "Deconstructed Banana Colada",
     "style": "Sour",
     "base": "Rum",
@@ -8,7 +24,7 @@
     "ingredients": [
       { "amount": 60,   "unit": "mL", "ingredient": "Fig Leaf infused Rum with Banana Oleo" },
       { "amount": 20,   "unit": "mL", "ingredient": "Banana Cordial" },
-      "Coconut Cloud Float"
+      "Salted coconut cloud float"
     ],
     "method": [
       "<b>Fig Leaf Infused Rum</b><br>300mL Light Rum, 4 fig leaves, pinch of citric Acid<br>Room Temperature Infuse for 18-24 hours",
