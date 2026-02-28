@@ -21,6 +21,24 @@
   },
 
   {
+    "name": "Fruitcake Manhattan",
+    "style": "Old-Fashioned",
+    "base": "Brandy",
+    "category": "Drop of the Gods",
+    "img": "images/fruitcake_manhattan.jpg",
+    "ingredients": [
+      { "amount": 75,   "unit": "mL", "ingredient": "Candied Fruit infused Manhattan" },
+      { "amount": 15,   "unit": "mL", "ingredient": "Cake infused Vermouth" }
+    ],
+    "method": [
+      "<b>Candied Fruit Infused Manhattan</b><br>300mL Brandy<br>100mL Sweet Vermouth<br>50mL clearn unsweetened Apple Juice<br>150g Candied/Glace fruit (including glace citrus peel and cherries)<br>Cinnamon, Nutmeg, All Spice<br>Vanilla Extract",
+      "Sous Vide @55°C 1 hour<br>Clarify with Pectinex",
+      "<b>Cake infused Vermouth</b><br>50mL milk<br>20g Cake (plain short cake or fruit cake)<br>Blend, strain solids",
+      "3:1 ratio milk wash with Dry Vermouth and the cake-infused milk"
+    ]
+  },
+
+  {
     "name": "Honeymoon Period",
     "style": "Sour",
     "base": "Gin",
