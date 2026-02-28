@@ -3,7 +3,7 @@
     "name": "Armaretto Sour",
     "style": "Sour",
     "base": "Liqueur",
-    "section": "Classics",
+    "category": "Classics",
     "ingredients": [
       { "amount": 45,   "unit": "mL", "ingredient": "amaretto" },
       { "amount": 22.5, "unit": "mL", "ingredient": "bourbon" },
@@ -19,7 +19,7 @@
     "name": "Brandy Alexander",
     "style": "Alexander",
     "base": "Brandy",
-    "section": "Classics",
+    "category": "Classics",
     "img": "images/alexander.jpg",
     "ingredients": [
       { "amount": 25,   "unit": "mL", "ingredient": "brandy" },
@@ -33,7 +33,7 @@
     "name": "Margarita",
     "style": "Sidecar",
     "base": "Tequila",
-    "section": "Classics",
+    "category": "Classics",
     "img": "images/house-margarita.jpg",
     "ingredients": [
       { "amount": 45,   "unit": "mL", "ingredient": "tequila" },
@@ -44,30 +44,51 @@
   },
 
   {
+    "name": "Banana Alexander",
+    "style": "Alexander",
+    "base": "Brandy",
+    "category": "Drop of the Gods",
+    "img": "images/banana_alexander.jpg",
+    "ingredients": [
+      { "amount": 30,   "unit": "mL", "ingredient": "brandy" },
+      { "amount": 30,   "unit": "mL", "ingredient": "creme de cacao" },
+      { "amount": 15,   "unit": "mL", "ingredient": "milk" },
+      { "amount": 0.5,   "unit": "of a", "ingredient": "banana" },
+      { "amount": 1,   "unit": "spoon", "ingredient": "mascarpone" }
+    ],
+    "method": [
+      "Blend flesh of half a banana with the other ingredients",
+      "shake, double strain"
+    ],
+    "notes": "Concept originally from 'Bar FARO', Niigata"
+  },
+
+  {
     "name": "Deconstructed Banana Colada",
     "style": "Sour",
     "base": "Rum",
-    "section": "Drop of the Gods",
+    "category": "Drop of the Gods",
     "img": "images/banana_colada.jpg",
     "ingredients": [
       { "amount": 60,   "unit": "mL", "ingredient": "Fig Leaf infused Rum with Banana Oleo" },
-      { "amount": 20,   "unit": "mL", "ingredient": "Banana Cordial" }
+      { "amount": 20,   "unit": "mL", "ingredient": "Banana Cordial" },
+      "Coconut Cloud Float"
     ],
     "method": [
-      "<b>Fig Leaf Infused Rum</b><br>300mL Light Rum<br>4 Fig leaves<br>Pinch of Citric Acid<br>Room Temperature Infuse for 18-24 hours",
-      "<b>Banana Oleo</b><br>3 banana skins<br>50g sugar<br>pinch of citric acid<br>Room Temperature Infuse for 18-24 hours",
+      "<b>Fig Leaf Infused Rum</b><br>300mL Light Rum, 4 fig leaves, pinch of citric Acid<br>Room Temperature Infuse for 18-24 hours",
+      "<b>Banana Oleo</b><br>3 banana skins, 50g sugar, pinch of citric acid<br>Room temperature macerate for 18-24 hours",
       "Combine Fig Leaf Infused Rum, Banana Oleo, Cinnamon, Nutmeg, Room Temperature Infuse for 1 hour<br>Filter with Coffee Filter",
       "<b>Banana Juice Cordial</b><br>3 Bananas<br>Pinch of Citric Acid<br>Clarify with Pectinex<br>Citric Acid @3% by weight",
-      "<b>Coconut and Cream Float</b><br>2:1 Coconut Milk : Thick Cream<br>Pinch of Salt<br>Vanilla Extract"
+      "<b>Coconut Cloud Float</b><br>2:1 Coconut Milk : Thick Cream<br>Pinch of Salt<br>Vanilla Extract"
     ],
-    "notes": "Concept originally from Sydney 'MOKU's 'Ba-la-la' cocktail"
+    "notes": "Concept originally from 'MOKU', Sydney - 'Ba-la-la' cocktail"
   },
 
   {
     "name": "Silk Jasmine",
     "style": "Sour",
     "base": "Rum",
-    "section": "Drop of the Gods",
+    "category": "Drop of the Gods",
     "ingredients": [
       { "amount": 45,   "unit": "mL", "ingredient": "Pineapple Rum" },
       { "amount": 30,   "unit": "mL", "ingredient": "Passionfruit Cordial" },
@@ -80,7 +101,7 @@
       "<b>Jasmine Milk Tea</b><br>4g Jasmine Tea with 200mL Milk (20g team/ 1000mL milk)<br>Bring to boil, then turn off heat and soak for 5min",
       "<b>Milk Wash</b></br>Infuse chinese 5 spice powder for > 12 hours<br>3:1 cocktail to milk Milk Wash"
     ],
-    "notes": "Concept originally from Sydney 'Kahii's Silk Jasmine"
+    "notes": "Concept originally from 'Kahii', Sydney - 'Silk Jasmine' cocktail"
   }
 
 ]

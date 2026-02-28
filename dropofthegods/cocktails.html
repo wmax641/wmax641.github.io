@@ -106,7 +106,7 @@
 
     .filter-label {
       display: block;
-      min-width: 70px;
+      min-width: 100px;
       color: var(--accent);
       font-size: 0.8rem;
       font-weight: 700;
@@ -172,17 +172,17 @@
       color: #9fd0ff;
     }
 
-    .section-filter {
+    .category-filter {
       color: #b7f0bc;
     }
 
-    .section-filter:hover,
-    .section-filter:focus-visible {
+    .category-filter:hover,
+    .category-filter:focus-visible {
       border-color: rgba(180, 255, 184, 0.34);
       color: #b7f0bc;
     }
 
-    .section-filter.active {
+    .category-filter.active {
       background: rgba(180, 255, 184, 0.14);
       border-color: rgba(180, 255, 184, 0.2);
       color: #b7f0bc;
@@ -207,7 +207,7 @@
 
     .image-wrap {
       position: relative;
-      width: 100%;
+      width: 85%;
       margin: 0 auto;
       background: rgba(255, 255, 255, 0.08);
       border-radius: 1rem;
@@ -262,7 +262,7 @@
 
     .note-badge {
       flex: 0 0 auto;
-      font-size: 1.4rem;
+      font-size: 1.25rem;
       line-height: 1;
     }
 
@@ -270,13 +270,13 @@
       position: absolute;
       left: 0;
       bottom: calc(100% + 0.65rem);
-      min-width: 150px;
-      max-width: 220px;
+      min-width: 300px;
+      max-width: 350px;
       padding: 0.55rem 0.7rem;
       border-radius: 0.75rem;
       background: rgba(8, 8, 8, 0.92);
       color: #f6f0e8;
-      font-size: 0.8rem;
+      font-size: 1.0rem;
       line-height: 1.4;
       white-space: normal;
       box-shadow: 0 16px 32px rgba(0, 0, 0, 0.32);
@@ -341,7 +341,7 @@
       color: #f6f0e8;
       text-transform: none;
       letter-spacing: normal;
-      font-size: 0.8rem;
+      font-size: 1.0rem;
       line-height: 1.4;
       white-space: normal;
       box-shadow: 0 16px 32px rgba(0, 0, 0, 0.32);
@@ -384,7 +384,7 @@
       color: #9fd0ff;
     }
 
-    .section-chip {
+    .category-chip {
       background: rgba(180, 255, 184, 0.14);
       color: #b7f0bc;
     }
@@ -425,7 +425,7 @@
       box-shadow: 0 18px 45px var(--shadow);
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 639px) {
       body {
         padding: 1rem 0.8rem 2rem;
       }
@@ -445,10 +445,28 @@
         padding: 1.1rem;
       }
 
+      .image-wrap {
+        position: relative;
+        width: 85%;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 1rem;
+        overflow: hidden;
+      }
       .card-header {
         flex-direction: column;
       }
 
+    }
+
+    @media (min-width: 640px) and (max-width: 899px) {
+      .image-wrap {
+        width: 100%;
+      }
+      .card h2 {
+        margin: 0;
+        font-size: 1.3rem;
+      }
     }
   </style>
 </head>
@@ -481,7 +499,7 @@
     const filterState = {
       style: null,
       base: null,
-      section: null
+      category: null
     };
     let allRecipes = [];
 
@@ -502,7 +520,10 @@
         return item;
       }
 
-      return `${formatAmount(item.amount)} ${item.unit} ${item.ingredient}`;
+      const amountText = item.amount !== undefined && item.amount !== null
+        ? `<strong>${formatAmount(item.amount)}</strong>`
+        : "";
+      return [amountText, item.unit, item.ingredient].filter(Boolean).join(" ");
     }
 
     function renderTitle(recipe, className = "") {
@@ -519,7 +540,8 @@
     }
 
     function getUniqueValues(recipes, key) {
-      return [...new Set(recipes.map((recipe) => recipe[key]).filter(Boolean))];
+      return [...new Set(recipes.map((recipe) => recipe[key]).filter(Boolean))]
+        .sort((a, b) => String(a).localeCompare(String(b), undefined, { sensitivity: "base" }));
     }
 
     function createFilterGroup(label, key, values) {
@@ -547,13 +569,13 @@
       filtersRoot.innerHTML = [
         createFilterGroup("Style", "style", getUniqueValues(recipes, "style")),
         createFilterGroup("Base", "base", getUniqueValues(recipes, "base")),
-        createFilterGroup("Section", "section", getUniqueValues(recipes, "section"))
+        createFilterGroup("Category", "category", getUniqueValues(recipes, "category"))
       ].join("");
     }
 
     function getFilteredRecipes() {
       return allRecipes.filter((recipe) => {
-        return ["style", "base", "section"].every((key) => {
+        return ["style", "base", "category"].every((key) => {
           return filterState[key] === null || recipe[key] === filterState[key];
         });
       });
@@ -578,7 +600,7 @@
             <div class="chip-row">
               ${recipe.style ? `<span class="chip style-chip" tabindex="0" data-tooltip="The foundational cocktail class">${recipe.style}</span>` : ""}
               ${recipe.base ? `<span class="chip base-chip" tabindex="0" data-tooltip="The primary base liqueur">${recipe.base}</span>` : ""}
-              ${recipe.section ? `<span class="chip section-chip" tabindex="0" data-tooltip="Category">${recipe.section}</span>` : ""}
+              ${recipe.category ? `<span class="chip category-chip" tabindex="0" data-tooltip="Category">${recipe.category}</span>` : ""}
             </div>
           </div>
           <div>
