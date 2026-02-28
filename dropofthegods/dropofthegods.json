@@ -83,12 +83,13 @@
       { "amount": 35,   "unit": "mL", "ingredient": "Mezcal" },
       { "amount": 35,   "unit": "mL", "ingredient": "Citrus and Rosmary shrub" },
       { "amount": 5,    "unit": "mL", "ingredient": "Lime Juice" },
-      "top with Soda, about 1:2 ratio"
+      "top up with Soda, about 1:2 ratio"
     ],
     "method": [
-      "<b>Citrus and Rosmary shrub</b><br>3:2:2 ratio citrus, sugar, white wine vinegar<br>Rosemary",
-      "Oleo saccharum with sugar and citrus peel first<br>then add other ingredients<br>Infuse for 3-5 days"
-    ]
+      "<b>Citrus and Rosmary shrub</b><br>3:2:2 ratio of citrus, sugar, white wine vinegar<br>Rosemary",
+      "Oleo/macerate sugar and citrus peel and rosemary first<br>then add the other ingredients<br>Infuse for 3-5 days"
+    ],
+    "notes": "Concept originally from 'Bar Flying Bumblebee', Tokyo"
   },
 
   {
