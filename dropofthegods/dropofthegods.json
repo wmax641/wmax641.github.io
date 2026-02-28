@@ -21,6 +21,27 @@
   },
 
   {
+    "name": "Honeymoon Period",
+    "style": "Sour",
+    "base": "Gin",
+    "category": "Drop of the Gods",
+    "img": "images/honeymoon_period.jpg",
+    "ingredients": [
+      { "amount": 45,   "unit": "mL", "ingredient": "Roku gin" },
+      { "amount": 30,   "unit": "mL", "ingredient": "Lychee Passionfruit cordial" },
+      "Jasmine Milk Tea milk wash (3:1)",
+      "spritz with orange blossom water"
+    ],
+    "method": [
+      "<b>Lychee Passionfruit cordial</b><br>200mL Lychee juice, 50mL passionfruit juice (4:1 ratio)<br>Sugar @27.5% weight<br>Citric Acid @2% weight",
+      "<b>Jasmine Milk Tea</b><br>4g Jasmine Tea with 200mL Milk (20g team/ 1000mL milk)<br>Bring to boil, then turn off heat and soak for 5min",
+      "<b>Milk Wash</b><br>3:1 cocktail to milk Milk Wash",
+      "1mL Orange Blossom Water / 100mL resultant milk wash<br>spritz with orange blossom water as garnish"
+    ]
+  },
+
+
+  {
     "name": "Silk Jasmine",
     "style": "Sour",
     "base": "Rum",
@@ -29,7 +50,7 @@
       { "amount": 45,   "unit": "mL", "ingredient": "Pineapple Rum" },
       { "amount": 30,   "unit": "mL", "ingredient": "Passionfruit Cordial" },
       "4g chinese 5-spice powder / 1000mL cocktail mix",
-      "Jasmine Milk Tea milk wash"
+      "Jasmine Milk Tea milk wash (3:1)"
     ],
     "method": [
       "<b>Pineapple Rum</b><br>300mL Dark Rum (ideally Planteray Pineapple Rum)<br>Sous Vide @55°C for 2 hours",
