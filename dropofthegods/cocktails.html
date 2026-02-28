@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cocktail Recipes</title>
+  <title>🍹 Cocktail Recipes 🍸</title>
   <style>
     :root {
       --bg-1: #120f0b;
@@ -216,7 +216,7 @@
 
     .card-image {
       width: 100%;
-      aspect-ratio: 16 / 10;
+      aspect-ratio: 16 / 11;
       object-fit: cover;
       border-radius: 1rem;
       background: rgba(255, 255, 255, 0.04);
@@ -393,8 +393,8 @@
       display: block;
       margin-bottom: 0.35rem;
       color: var(--accent);
-      font-size: 0.78rem;
-      letter-spacing: 0.08em;
+      font-size: 0.9rem;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
     }
 
@@ -631,20 +631,36 @@
       updateView();
     });
 
+    const RECIPE_SOURCES = ["./classics.json", "./dropofthegods.json", "./riffs.json"];
+
+    async function loadRecipeFile(path) {
+      const response = await fetch(path);
+      if (!response.ok) {
+        throw new Error(`${path} (HTTP ${response.status})`);
+      }
+
+      const parsed = await response.json();
+      if (!Array.isArray(parsed)) {
+        throw new Error(`${path} did not contain a JSON array`);
+      }
+
+      return parsed;
+    }
+
     async function loadRecipes() {
       try {
-        const response = await fetch("./cocktails.json");
-        if (!response.ok) {
-          throw new Error(`HTTP ${response.status}`);
-        }
-
-        allRecipes = await response.json();
+        // Future-friendly: split recipes across files, then merge 📦
+        const recipeLists = await Promise.all(RECIPE_SOURCES.map((path) => loadRecipeFile(path)));
+        allRecipes = recipeLists
+          .flat()
+          .sort((a, b) => String(a?.name ?? "").localeCompare(String(b?.name ?? ""), undefined, { sensitivity: "base" }));
         updateView();
       } catch (error) {
         filtersRoot.innerHTML = "";
         recipeGrid.innerHTML = `
           <div class="status">
-            Unable to load recipes from <code>cocktails.json</code>.
+            Unable to load recipes from <code>${RECIPE_SOURCES.join(", ")}</code>.<br>
+            ${error.message}
           </div>
         `;
       }
