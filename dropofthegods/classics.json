@@ -36,9 +36,9 @@
     "category": "Classics",
     "img": "images/manhattan.jpg",
     "ingredients": [
-      { "amount": 50,   "unit": "mL", "ingredient": "rye whisky" },
-      { "amount": 25, "unit": "mL", "ingredient": "Anti Formula sweet vermouth" },
-      { "amount": 1, "unit": "dash", "ingredient": "Angostura bitters" }
+      { "amount": 50,   "unit": "mL", "type": "rye", "ingredient": "whisky" },
+      { "amount": 25,   "unit": "mL", "type": "Antica Formula","ingredient": "sweet vermouth" },
+      { "amount": 1,    "unit": "dash", "type": "Angostura", "ingredient": "bitters" }
     ],
     "method": ["shake", "thin salt rim"]
   },

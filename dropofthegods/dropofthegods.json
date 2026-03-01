@@ -62,7 +62,7 @@
     "category": "Drop of the Gods",
     "img": "images/honeymoon_period.jpg",
     "ingredients": [
-      { "amount": 45,   "unit": "mL", "ingredient": "Roku gin" },
+      { "amount": 45,   "unit": "mL", "type": "Roku", "ingredient": "gin" },
       { "amount": 30,   "unit": "mL", "ingredient": "Lychee Passionfruit cordial" },
       "Jasmine Milk Tea milk wash (3:1)",
       "spritz with orange blossom water"

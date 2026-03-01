@@ -152,6 +152,77 @@
       text-transform: uppercase;
     }
 
+    .filter-label-wrap {
+      display: inline-flex;
+      align-items: flex-start;
+      gap: 0.35rem;
+      position: relative;
+    }
+
+    .filter-help {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(233, 200, 180, 0.2);
+      color: rgba(233, 200, 180, 0.5);
+      font-size: 0.68rem;
+      line-height: 1;
+      cursor: help;
+      transform: translateY(-0.25rem);
+      user-select: none;
+    }
+
+    .filter-help::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      left: 50%;
+      bottom: calc(100% + 0.55rem);
+      transform: translateX(-50%) translateY(0.2rem);
+      min-width: 180px;
+      max-width: 240px;
+      padding: 0.5rem 0.65rem;
+      border-radius: 0.7rem;
+      background: rgba(8, 8, 8, 0.92);
+      color: #f6f0e8;
+      text-transform: none;
+      letter-spacing: normal;
+      font-size: 0.75rem;
+      line-height: 1.35;
+      white-space: normal;
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.32);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 140ms ease, transform 140ms ease;
+      z-index: 6;
+    }
+
+    .filter-help::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: calc(100% + 0.22rem);
+      transform: translateX(-50%) translateY(0.2rem);
+      border-width: 0.32rem;
+      border-style: solid;
+      border-color: rgba(8, 8, 8, 0.92) transparent transparent transparent;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 140ms ease, transform 140ms ease;
+      z-index: 6;
+    }
+
+    .filter-help:hover::after,
+    .filter-help:hover::before,
+    .filter-help:focus-visible::after,
+    .filter-help:focus-visible::before {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
     .filter-line {
       display: flex;
       align-items: center;
@@ -584,9 +655,11 @@
       }
 
       const amountText = item.amount !== undefined && item.amount !== null
-        ? `<strong>${formatAmount(item.amount)}</strong>`
+        ? `<b>${formatAmount(item.amount)}</b>`
         : "";
-      return [amountText, item.unit, item.ingredient].filter(Boolean).join(" ");
+      const typeText = item.type ? `<i>${item.type}</i>` : "";
+      const ingredientText = item.ingredient ? `<b>${item.ingredient}</b>` : "";
+      return [amountText, item.unit, typeText, ingredientText].filter(Boolean).join(" ");
     }
 
     function renderTitle(recipe, className = "") {
@@ -607,10 +680,21 @@
         .sort((a, b) => String(a).localeCompare(String(b), undefined, { sensitivity: "base" }));
     }
 
-    function createFilterGroup(label, key, values) {
+    const FILTER_HELP_TEXT = {
+      style: "The foundational cocktail class",
+      base: "The main type of liquor used",
+      category: "'Classics' are my recipe for classics. 'Riffs' are cocktails that are slight modifications of a Classic Cocktail. 'Drop of the Gods' are original recipes."
+    };
+
+    function createFilterGroup(label, key, values, helpText = "") {
       return `
         <div class="filter-line">
-          <span class="filter-label">${label}</span>
+          <span class="filter-label">
+            <span class="filter-label-wrap">
+              ${label}
+              <span class="filter-help" tabindex="0" role="note" aria-label="${label} filter help" data-tooltip="${helpText}">?</span>
+            </span>
+          </span>
           <div class="filter-row">
             ${values.map((value) => `
               <button
@@ -630,9 +714,9 @@
 
     function renderFilters(recipes) {
       filtersContent.innerHTML = [
-        createFilterGroup("Style", "style", getUniqueValues(recipes, "style")),
-        createFilterGroup("Base", "base", getUniqueValues(recipes, "base")),
-        createFilterGroup("Category", "category", getUniqueValues(recipes, "category"))
+        createFilterGroup("Style", "style", getUniqueValues(recipes, "style"), FILTER_HELP_TEXT.style),
+        createFilterGroup("Base", "base", getUniqueValues(recipes, "base"), FILTER_HELP_TEXT.base),
+        createFilterGroup("Category", "category", getUniqueValues(recipes, "category"), FILTER_HELP_TEXT.category)
       ].join("");
     }
 
