@@ -30,11 +30,25 @@
   },
 
   {
+    "name": "Manhattan",
+    "style": "Martini",
+    "base": "Whisky",
+    "category": "Classics",
+    "img": "images/manhattan.jpg",
+    "ingredients": [
+      { "amount": 50,   "unit": "mL", "ingredient": "rye whisky" },
+      { "amount": 25, "unit": "mL", "ingredient": "Anti Formula sweet vermouth" },
+      { "amount": 1, "unit": "dash", "ingredient": "Angostura bitters" }
+    ],
+    "method": ["shake", "thin salt rim"]
+  },
+
+  {
     "name": "Margarita",
     "style": "Sidecar",
     "base": "Tequila",
     "category": "Classics",
-    "img": "images/house-margarita.jpg",
+    "img": "images/margarita.jpg",
     "ingredients": [
       { "amount": 45,   "unit": "mL", "ingredient": "tequila" },
       { "amount": 22.5, "unit": "mL", "ingredient": "cointreau" },

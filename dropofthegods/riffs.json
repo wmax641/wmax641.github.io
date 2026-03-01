@@ -40,14 +40,19 @@
     "style": "Sidecar",
     "base": "Tequila",
     "category": "Riffs",
-    "img": "images/house-margarita.jpg",
+    "img": "images/margarita.jpg",
     "ingredients": [
       { "amount": 50,   "unit": "mL", "ingredient": "tequila" },
       { "amount": 10,   "unit": "mL", "ingredient": "agave nectar" },
       { "amount": 25,   "unit": "mL", "ingredient": "lime juice" },
       "orange peel"
     ],
-    "method": ["regal shake with orange peel", "thin salt rim", "express orange peel"]
+    "method": [
+      "regal shake with orange peel",
+      "thin salt rim",
+      "express orange peel",
+      "(if using Monin Agave Syrup, use about 15mL)"
+    ]
   },
 
   {

@@ -1,9 +1,10 @@
 [
   {
     "name": "Coffee Negroni",
-    "style": "Old-Fashioned",
+    "style": "Martini",
     "base": "Gin",
     "category": "Drop of the Gods",
+    "img": "images/coffee_negroni.jpg",
     "ingredients": [
       { "amount": 30,   "unit": "mL", "ingredient": "Coffee infused Gin" },
       { "amount": 22.5, "unit": "mL", "ingredient": "Citrus infused Aperitivo" },
@@ -38,7 +39,7 @@
 
   {
     "name": "Fruitcake Manhattan",
-    "style": "Old-Fashioned",
+    "style": "Martini",
     "base": "Brandy",
     "category": "Drop of the Gods",
     "img": "images/fruitcake_manhattan.jpg",
@@ -79,11 +80,12 @@
     "style": "Highball",
     "base": "Tequila",
     "category": "Drop of the Gods",
+    "img": "images/mezcal_paloma.jpg",
     "ingredients": [
       { "amount": 35,   "unit": "mL", "ingredient": "Mezcal" },
       { "amount": 35,   "unit": "mL", "ingredient": "Citrus and Rosmary shrub" },
       { "amount": 5,    "unit": "mL", "ingredient": "Lime Juice" },
-      "top up with Soda, about 1:2 ratio"
+      "top up with Soda, about 1:1 ratio of cocktail:soda"
     ],
     "method": [
       "<b>Citrus and Rosmary shrub</b><br>3:2:2 ratio of citrus, sugar, white wine vinegar<br>Rosemary",
