@@ -40,7 +40,7 @@
       { "amount": 25,   "unit": "mL", "type": "Antica Formula","ingredient": "sweet vermouth" },
       { "amount": 1,    "unit": "dash", "type": "Angostura", "ingredient": "bitters" }
     ],
-    "method": ["shake", "thin salt rim"]
+    "method": ["stir", "express orange🍊 peel"]
   },
 
   {
